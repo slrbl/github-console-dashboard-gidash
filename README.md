@@ -4,6 +4,7 @@ Get popularity news and a global view of your Github repositories with simple co
 `
 $ export GITHUB_TOKEN=your_git_hub_token
 `
+<br>
 `
 $ python gidash.py
 `
