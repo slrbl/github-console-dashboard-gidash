@@ -1,0 +1,45 @@
+
+ABOUT YOUR GITHUB
+
+NAME: Walid DABOUBI
+LOGIN: slrbl
+URL: https://api.github.com/users/slrbl
+
+YOU GITHUB NEWS SUMMARY
+
+╭─ FORKS ─╮ ╭─ STARGAZERS ─╮ ╭─ WATCHERS ─╮ ╭─ OPEN ISSUES ─╮ ╭─ FOLLOWERS ─╮
+│ 0       │ │ 0            │ │ 0          │ │ 0             │ │ 0           │
+╰─────────╯ ╰──────────────╯ ╰────────────╯ ╰───────────────╯ ╰─────────────╯
+
+CURRENT STATUS VS PREVIOUS KNOW STATUS
+
+┏━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━┓
+┃ Status   ┃ Date                       ┃ Forks ┃ Stars ┃ Watchers ┃ Open Issues ┃ Followers ┃
+┡━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━┩
+│ CURRENT  │ 2021-02-07 21:34:37.750821 │  67   │  128  │   128    │      6      │    31     │
+│ PREVIOUS │ 2021-02-07 21:33:53.952240 │  67   │  128  │   128    │      6      │    31     │
+└──────────┴────────────────────────────┴───────┴───────┴──────────┴─────────────┴───────────┘
+
+REPOSITORY DETAILS
+
+┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━┓
+┃ Github    ┃ Name                                                                   ┃ Forks ┃ Stars ┃ Watchers ┃ Open Issues ┃
+┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━┩
+│ 83909958  │ Intrusion-and-anomaly-detection-with-machine-learning                  │  44   │  77   │    77    │      0      │
+│ 166602086 │ human-in-the-loop-machine-learning-tool-tornado                        │   5   │  15   │    15    │      4      │
+│ 139059369 │ malicious-urls-detection-with-autoencoder-neural-networks              │   6   │  15   │    15    │      0      │
+│ 177890669 │ malware-detection-with-deep-learning-autoencoder                       │   6   │   5   │    5     │      2      │
+│ 115864928 │ perceptron-text-classification-from-scracth                            │   1   │   3   │    3     │      0      │
+│ 69671693  │ DevOps-Swiss-Knife-Tools                                               │   1   │   2   │    2     │      0      │
+│ 325843962 │ future-prediction-using-tweets-and-ai                                  │   1   │   2   │    2     │      0      │
+│ 273087511 │ reinforcement-learning-game                                            │   0   │   2   │    2     │      0      │
+│ 54109605  │ Algorithms-And-Data-Structures-In-Java                                 │   1   │   1   │    1     │      0      │
+│ 336784742 │ github-console-dashboard-gidash                                        │   0   │   1   │    1     │      0      │
+│ 70948364  │ Is-It-Built-With-Ruby-On-Rails                                         │   0   │   1   │    1     │      0      │
+│ 32397961  │ JobTeaser                                                              │   0   │   1   │    1     │      0      │
+│ 300243714 │ monte-carlo-simulation-lazycarlo                                       │   0   │   1   │    1     │      0      │
+│ 125763919 │ rails-alchemy                                                          │   1   │   1   │    1     │      0      │
+│ 34999109  │ Rails-Signup-From-Scratch                                              │   1   │   1   │    1     │      0      │
+│ 248985704 │ coronavirus-covid-19-exponential-regression-and-monte-carlo-simulation │   0   │   0   │    0     │      0      │
+│ 67892348  │ crsr-ng                                                                │   0   │   0   │    0     │      0      │
+└───────────┴────────────────────────────────────────────────────────────────────────┴───────┴───────┴──────────┴─────────────┘

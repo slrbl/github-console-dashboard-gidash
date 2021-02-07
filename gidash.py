@@ -80,7 +80,15 @@ for repo in repos:
             session.add(repo_record)
         #print ('='*100)
 
+console = Console()
 user = requests.get('https://api.github.com/user', headers=headers).json()
+
+
+console.print('\nABOUT YOUR GITHUB\n'.upper())
+console.print('NAME: {}'.format(user['name']))
+console.print('LOGIN: {}'.format(user['login']))
+console.print('URL: {}'.format(user['url']))
+
 
 # Create a new snap
 new_snap_record = Snap(
@@ -93,7 +101,7 @@ new_snap_record = Snap(
     followers=user['followers']
 )
 
-console = Console()
+
 
 if session.query(Snap).count()>0:
     latest_snap_record = session.query(Snap).all()[-1]
@@ -114,6 +122,7 @@ if session.query(Snap).count()>0:
         panels.append(
             Panel(news[element], expand=True,title=element.replace('total_','').replace('_',' ').upper())
         )
+    console.print('\nYou github news summary\n'.upper())
     console.print(Columns(panels))
 
     # Current VS previous status table
@@ -143,6 +152,7 @@ if session.query(Snap).count()>0:
         str(latest_snap_record.total_open_issues),
         str(latest_snap_record.followers),
     )
+    console.print('\nCurrent status VS previous know status\n'.upper())
     console.print(table)
 
 # Repositories
@@ -150,6 +160,7 @@ repos = session.query(Repo).order_by(desc(Repo.stargazers_count))
 table = Table(show_header=True, header_style="bold green")
 table.add_column("Github", style="dim")
 table.add_column("Name", justify="left")
+table.add_column("Forks", justify="center")
 table.add_column("Stars", justify="center")
 table.add_column("Watchers", justify="center")
 table.add_column("Open Issues", justify="center")
@@ -157,10 +168,12 @@ for repo in repos:
     table.add_row(
         str(repo.github_id),
         str(repo.name),
+        str(repo.forks_count),
         str(repo.stargazers_count),
         str(repo.watchers_count),
         str(repo.open_issues_count),
     )
+console.print('\nRepository details\n'.upper())
 console.print(table)
 
 # Add snap record to the sessions
