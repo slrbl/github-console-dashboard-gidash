@@ -1,2 +1,4 @@
 # github-console-dashboard-gidash
-Have a global view of your Github repositories with simple console command 
+Get a global view of your Github repositories with simple console command 
+
+<img src='https://github.com/slrbl/github-console-dashboard-gidash/screencap_1.png'/>
