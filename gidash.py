@@ -7,43 +7,14 @@ import datetime
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from rich.columns import Columns
-from rich.panel import Panel
-from rich.console import Console
-from rich.table import Table
 import os
+from database import *
 
+# Create Database/Session
 engine = create_engine('sqlite:///./data.db', echo=False)
 Session = sessionmaker(bind=engine)
 session = Session()
-Base = declarative_base()
-
-class Snap(Base):
-    __tablename__ = 'snaps'
-    id = Column(Integer, primary_key=True)
-    date = Column(DateTime)
-    total_forks = Column(Integer)
-    total_stargazers = Column(Integer)
-    total_watchers = Column(Integer)
-    total_open_issues = Column(Integer)
-    followers = Column(Integer)
-    def __repr__(self):
-        return f'Snap {self.id}'
-
-class Repo(Base):
-    __tablename__ = 'repos'
-    id = Column(Integer, primary_key=True)
-    github_id = Column(Integer)
-    name = Column(String)
-    forks_count = Column(Integer)
-    stargazers_count = Column(Integer)
-    watchers_count = Column(Integer)
-    open_issues_count = Column(Integer)
-    def __repr__(self):
-        return f'Repo {self.id}'
-
 Base.metadata.create_all(engine)
-
 
 headers = {
     'Authorization': 'token {}'.format(os.getenv('GITHUB_TOKEN')),
@@ -80,15 +51,19 @@ for repo in repos:
             session.add(repo_record)
         #print ('='*100)
 
+from rich.columns import Columns
+from rich.panel import Panel
+from rich.console import Console
+from rich.table import Table
+
+
 console = Console()
 user = requests.get('https://api.github.com/user', headers=headers).json()
 
-
 console.print('\nABOUT YOUR GITHUB\n'.upper())
-console.print('NAME: {}'.format(user['name']))
+console.print('OWNER: {}'.format(user['name']))
 console.print('LOGIN: {}'.format(user['login']))
 console.print('URL: {}'.format(user['url']))
-
 
 # Create a new snap
 new_snap_record = Snap(
@@ -100,8 +75,6 @@ new_snap_record = Snap(
     total_open_issues=total_open_issues,
     followers=user['followers']
 )
-
-
 
 if session.query(Snap).count()>0:
     latest_snap_record = session.query(Snap).all()[-1]
@@ -115,7 +88,6 @@ if session.query(Snap).count()>0:
             if (diff) > 0:
                 formatted_diff = '+{}'.format(formatted_diff)
             news[new_column.key] = formatted_diff
-
     # Draw news panels
     panels = []
     for element in news:
@@ -124,7 +96,6 @@ if session.query(Snap).count()>0:
         )
     console.print('\nYou github news summary\n'.upper())
     console.print(Columns(panels))
-
     # Current VS previous status table
     table = Table(show_header=True, header_style="bold red")
     table.add_column("Status", style="dim")
@@ -154,7 +125,6 @@ if session.query(Snap).count()>0:
     )
     console.print('\nCurrent status VS previous know status\n'.upper())
     console.print(table)
-
 # Repositories
 repos = session.query(Repo).order_by(desc(Repo.stargazers_count))
 table = Table(show_header=True, header_style="bold green")
@@ -175,9 +145,7 @@ for repo in repos:
     )
 console.print('\nRepository details\n'.upper())
 console.print(table)
-
 # Add snap record to the sessions
 session.add(new_snap_record)
-
 # Commit all to the database
 session.commit()
